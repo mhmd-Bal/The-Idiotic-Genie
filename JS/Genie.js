@@ -243,3 +243,13 @@ function showPosition(position){
 }
 
 getLocation();
+
+window.addEventListener("scroll", function(){
+    const scrollable = document.documentElement.scrollHeight - this.window.innerHeight;
+    const scrolled = window.scrollY;
+    
+    if(Math.ceil(scrolled) == scrollable) {
+        alert("You can use the elevator Button to go back up!");
+    }
+});
+
