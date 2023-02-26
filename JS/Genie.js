@@ -115,10 +115,3 @@ function getEvenNumbers(numbers_list){
     return even_numbers;
 }
 
-function addNumbers(numbers_list){
-    let total = 0;
-    for (let i=0; i<numbers_list; i++){
-        total += numbers_list[i];
-    }
-    return total;
-}
