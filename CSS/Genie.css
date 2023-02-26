@@ -106,3 +106,16 @@ body{
     display: inline-block;
     margin-left: 20px;
 }
+
+#Top{
+    text-align: center;
+    border: 1px solid blue;
+    background-color: aqua;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.Bottom_block{
+    text-align: center;
+    margin: 40px;
+}
