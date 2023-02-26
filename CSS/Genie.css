@@ -98,7 +98,7 @@ body{
     margin-top: 40px;
 }
 
-#Prime_answer, #Is_palindrome, #Reversed, #Moving_consonant{
+#Prime_answer, #Is_palindrome, #Reversed, #Consonant_string{
     display: inline-block;
     margin-left: 20px;
 }

@@ -8,6 +8,7 @@ let ip_addr;
 let counter = 0;
 let array_of_objects = [];
 const reverse_result = document.getElementById("Reversed");
+const consonant_result = document.getElementById("Consonant_string");
 
 for(let i=0; i < accordions.length; i++) {
     accordions[i].addEventListener("click", function(){
@@ -194,17 +195,17 @@ function printReverseNumbers(){
 }
 
 
-function movingConsonant(temp_string){
-    temp_string = temp_string.split("");
+function movingConsonant(ban_string){
+    ban_string = ban_string.split("");
     let consonants = [];
-    
-    for (let i = 0; i < temp_string.length; i++){
-        if(temp_string[i] == "a" || temp_string[i] == "e"|| temp_string[i] == "o" || temp_string[i] == "u" || temp_string[i] == "i"){
+
+    for (let i = 0; i < ban_string.length; i++){
+        if(ban_string[i] == "a" || ban_string[i] == "e"|| ban_string[i] == "o" || ban_string[i] == "u" || ban_string[i] == "i"){
             continue;
         }else{
-            for( let j = i+1; j < temp_string.length; j++){
-                if(temp_string[j] == "a" || temp_string[j] == "e"|| temp_string[j] == "o" || temp_string[j] == "u" || temp_string[j] == "i"){
-                    consonants = temp_string.splice(i, j-1);
+            for( let j = i+1; j < ban_string.length; j++){
+                if(ban_string[j] == "a" || ban_string[j] == "e"|| ban_string[j] == "o" || ban_string[j] == "u" || ban_string[j] == "i"){
+                    consonants = ban_string.splice(i, j);
                     break;
                 }else{
                     continue;
@@ -213,14 +214,16 @@ function movingConsonant(temp_string){
             break;
         }
     }
-    
     consonants.push("ay");
     consonants = consonants.join("");
-    temp_string.push(consonants);
-    temp_string = temp_string.join("");
-    return temp_string
+    ban_string.push(consonants);
+    ban_string = ban_string.join("");
+    return ban_string;
 }
 
+
 function printConsonantString(){
-    
+    let normal_consonant = document.getElementById("Moving_consonant").value;
+    moved_consonant = movingConsonant(normal_consonant);
+    consonant_result.textContent = "The End Result is: " + moved_consonant;
 }
