@@ -117,7 +117,7 @@ function getEvenNumbers(numbers_list){
 
 function addNumbers(numbers_list){
     let total = 0;
-    for (let i=0; i<numbers_list; i++){
+    for (let i=0; i<numbers_list.length; i++){
         total += numbers_list[i];
     }
     return total;
