@@ -94,8 +94,12 @@ body{
     margin-bottom: 40px;
 }
 
+.Prime_age, .Number_merge_sort{
+    margin-bottom: 60px;
+}
+
 .Prime_age{
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 #Prime_answer, #Is_palindrome, #Reversed, #Consonant_string{

@@ -4,11 +4,13 @@ const prime_answer = document.getElementById("Prime_answer");
 const ip_address_text = document.getElementById("Ip_address");
 const even_ip = document.getElementById("Even_ip");
 const palindrome_result = document.getElementById("Is_palindrome");
+const reverse_result = document.getElementById("Reversed");
+const consonant_result = document.getElementById("Consonant_string");
+const user_location = document.getElementById("Location");
 let ip_addr;
 let counter = 0;
 let array_of_objects = [];
-const reverse_result = document.getElementById("Reversed");
-const consonant_result = document.getElementById("Consonant_string");
+
 
 for(let i=0; i < accordions.length; i++) {
     accordions[i].addEventListener("click", function(){
@@ -227,3 +229,17 @@ function printConsonantString(){
     moved_consonant = movingConsonant(normal_consonant);
     consonant_result.textContent = "The End Result is: " + moved_consonant;
 }
+
+
+function getLocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+
+function showPosition(position){
+    user_location.innerHTML += "<br><br>Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+getLocation();
