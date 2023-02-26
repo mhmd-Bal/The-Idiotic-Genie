@@ -7,6 +7,7 @@ const palindrome_result = document.getElementById("Is_palindrome");
 let ip_addr;
 let counter = 0;
 let array_of_objects = [];
+const reverse_result = document.getElementById("Reversed");
 
 for(let i=0; i < accordions.length; i++) {
     accordions[i].addEventListener("click", function(){
@@ -159,25 +160,36 @@ function isNumber(value){
 
 
 function reverseNumbers(str){
+    takeNumbersFromString(str);
+    str = putNumbersInReverse(str);
+    return str;
+}
+
+function takeNumbersFromString(str){
     for(let i=0; i < str.length; i++){
-        var char = str[i];
+        let char = str[i];
         if(isNumber(char)){
             array_of_objects.push(char);
         }
     }
-    
-    
+}
+
+function putNumbersInReverse(str){
     str = str.split("");
     array_of_objects.reverse();
-    
     for(let i=0; i < str.length; i++){
-        var char = str[i];
+        let char = str[i];
         if(isNumber(char)){
             str[i] = array_of_objects.shift();
         }
     }
-    
     str = str.join("");
-    
     return str;
 }
+
+function printReverseNumbers(){
+    const normal_string = document.getElementById("Reverse_numbers").value;
+    reversed_string = reverseNumbers(normal_string);
+    reverse_result.textContent = "The reversed string is: " + reversed_string;
+}
+

@@ -98,7 +98,7 @@ body{
     margin-top: 40px;
 }
 
-#Prime_answer, #Is_palindrome{
+#Prime_answer, #Is_palindrome, #Reversed{
     display: inline-block;
     margin-left: 20px;
 }
