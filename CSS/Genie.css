@@ -68,6 +68,28 @@ body{
     color: cadetblue;
 }
 
+.Accordion{
+    background-color: aqua;
+    cursor: pointer;
+    padding: 2%;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+.Accordion:hover, .Active{
+    background-color: rgb(15, 187, 187);
+}
+
+.Accordion_text{
+    display: none;
+    overflow: hidden;
+    padding: 0 2%;
+}
+
+
 
 /* Register */
 
