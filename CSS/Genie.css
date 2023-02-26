@@ -90,6 +90,18 @@ body{
     transition: max-height 0.2s ease-out;
 }
 
+.Number_manipulation_title{
+    margin-bottom: 40px;
+}
+
+.Prime_age{
+    margin-top: 40px;
+}
+
+#Prime_answer{
+    display: inline-block;
+    margin-left: 20px;
+}
 
 
 /* Register */

@@ -1,5 +1,6 @@
 const accordions = document.getElementsByClassName("Accordion");
 const sorted_numbers_text = document.getElementById("Sorted_numbers");
+const prime_answer = document.getElementById("Prime_answer");
 
 for(let i=0; i < accordions.length; i++) {
     accordions[i].addEventListener("click", function(){
@@ -16,9 +17,8 @@ for(let i=0; i < accordions.length; i++) {
     });
 }
 
-
 function printSortedNumbers(){
-    let numbers = prompt("Please give me the 5 numbers separated by space");
+    let numbers = prompt("Please give me the 10 numbers separated by space");
     let numbers_string_array = numbers.split(" ");
     let numbers_array = makeArrayNumbers(numbers_string_array);
     let sorted_array =  mergeSortArray(numbers_array);
@@ -60,3 +60,27 @@ function makeArrayNumbers(string_array){
     }
     return numbers_array;
 }
+
+function isAgePrime(){
+    const year_of_birth = document.getElementById("Year_of_birth").value;
+    let Age = 2023 - year_of_birth;
+    let is_prime = true;
+    if (Age == 1){
+        prime_answer.textContent = Age + " is not a prime number";
+    }
+    if (Age > 1){
+        for(let i=2; i < Age; i++){
+            if(Age % i == 0){
+                is_prime = false;
+                break;
+            }
+        }
+
+        if(is_prime){
+            prime_answer.textContent = Age + " is a prime number";
+        }else{
+            prime_answer.textContent = Age + " is not a prime number";
+        }
+    }
+}
+

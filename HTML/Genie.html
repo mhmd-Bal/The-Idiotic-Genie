@@ -27,10 +27,18 @@
     <div class="Accordion_block">
         <button class="Accordion">Number Manipulation</button>
         <div class="Accordion_text">
-            <p>I can control numbers like I can control my fingers, Give me all you got!</p>
-            <p>First click the button below, give me any 10 numbers and I shall put them in order: </p>
-            <button onclick="printSortedNumbers()">Click me!</button>
-            <p id="Sorted_numbers">Your sorted numbers will appear here ---> </p>
+            <h3 class="Number_manipulation_title">I can control numbers like I can control my fingers, Give me all you got!</h3>
+            <div id="Number_merge_sort">
+                <p>First click the button below, give me any 10 numbers and I shall put them in order: </p>
+                <button onclick="printSortedNumbers()">Click me!</button>
+                <p id="Sorted_numbers">Your sorted numbers will appear here ---> </p>
+            </div>
+            <div class="Prime_age">
+                <p>Second I can easily tell you if your age is a prime number, Just input your year of birth below: </p>
+                <input type="text" id="Year_of_birth">
+                <button onclick="isAgePrime()" class="Prime_button">Is it Prime?</button>
+                <p id="Prime_answer"></p>
+            </div>
         </div>
     </div>
     <div class="Accordion_block">
