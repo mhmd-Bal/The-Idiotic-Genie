@@ -11,8 +11,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center ;
-    padding: 1% 5%;
-    background-color: black;
+    padding: 10px 30px;
+    background-color: cadetblue;
     color: white;
 }
 
@@ -30,9 +30,44 @@ body{
 
 .Nav_bar li{
     width: max-content;
-    padding: 10px;
+    padding-right: 20px;
+}
+
+.Intro{
+    padding: 4% 0%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Intro_img_block{
+    display: flex;
+    justify-content: center;
+}
+
+.Intro_img{
+    width: 50%;
+}
+
+.Intro_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+}
+
+.Intro_title{
+    font-size: 40px;
+    color: aqua;
+}
+
+.Intro_text{
+    width: 50%;
+    font-size: 20px;
+    color: cadetblue;
 }
 
 
-
 /* Register */
+
