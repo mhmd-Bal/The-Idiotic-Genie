@@ -3,6 +3,7 @@ const sorted_numbers_text = document.getElementById("Sorted_numbers");
 const prime_answer = document.getElementById("Prime_answer");
 const ip_address_text = document.getElementById("Ip_address");
 const even_ip = document.getElementById("Even_ip");
+const palindrome_result = document.getElementById("Is_palindrome");
 let ip_addr;
 let counter = 0;
 
@@ -125,6 +126,22 @@ function addNumbers(numbers_list){
         total += numbers_list[i];
     }
     return total;
+}
+
+function isPalindrome(string){
+    if(string.length == 1) {
+        return true;
+    }
+
+    if(string.length == 2) {
+        return str[0] == str[1];
+    }
+
+    if(string[0] == string.slice(-1)) {
+        return checkPalindrome(string.slice(1,-1));
+    }
+
+    return false;
 }
 
 

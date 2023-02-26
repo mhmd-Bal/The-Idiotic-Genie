@@ -98,11 +98,7 @@ body{
     margin-top: 40px;
 }
 
-#Prime_answer{
+#Prime_answer, #Is_palindrome{
     display: inline-block;
     margin-left: 20px;
 }
-
-
-/* Register */
-
