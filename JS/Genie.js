@@ -193,3 +193,30 @@ function printReverseNumbers(){
     reverse_result.textContent = "The reversed string is: " + reversed_string;
 }
 
+
+let ban_string = "abanana";
+
+ban_string = ban_string.split("");
+let consonants = [];
+
+for (let i = 0; i < ban_string.length; i++){
+    if(ban_string[i] == "a" || ban_string[i] == "e"|| ban_string[i] == "o" || ban_string[i] == "u" || ban_string[i] == "i"){
+        continue;
+    }else{
+        for( let j = i+1; j < ban_string.length; j++){
+            if(ban_string[j] == "a" || ban_string[j] == "e"|| ban_string[j] == "o" || ban_string[j] == "u" || ban_string[j] == "i"){
+                consonants = ban_string.splice(i, j-1);
+                break;
+            }else{
+                continue;
+            }
+        }
+        break;
+    }
+}
+
+consonants.push("ay");
+consonants = consonants.join("");
+ban_string.push(consonants);
+ban_string = ban_string.join("");
+console.log(ban_string);
