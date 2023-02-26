@@ -18,9 +18,13 @@ for(let i=0; i < accordions.length; i++) {
 
 function printSortedNumbers(){
     let numbers = prompt("Please give me the 5 numbers separated by space");
-    const numbers_array = numbers.split(" ");
-    let sorted_numbers = [];
-
+    let numbers_string_array = numbers.split(" ");
+    console.log(numbers_string_array);
+    let numbers_array = makeArrayNumbers(numbers_string_array);
+    // let sorted_array =  mergeSortArray(numbers_array);
+    // const sorted_numbers_text = document.getElementById("Sorted_numbers");
+    
+    // sorted_numbers_text.innerHTML = "Hello team";
 }
 
 function mergeArray(left, right){
@@ -46,4 +50,13 @@ function mergeSortArray(temp_array){
     let right = mergeSortArray(temp_array.slice(mid));
 
     return mergeArray(left,right);
+}
+
+function makeArrayNumbers(string_array){
+    let numbers_array = []; 
+    for (let i=0; i < string_array.length; i++){
+        numbers_array.push(string_array[i]);
+    }
+    console.log(numbers_array);
+    return numbers_array;
 }
