@@ -129,19 +129,23 @@ function addNumbers(numbers_list){
 }
 
 function isPalindrome(string){
-    if(string.length == 1) {
+
+    if(string.length < 2) {
         return true;
     }
 
-    if(string.length == 2) {
-        return str[0] == str[1];
-    }
-
     if(string[0] == string.slice(-1)) {
-        return checkPalindrome(string.slice(1,-1));
+        return isPalindrome(string.slice(1,-1));
     }
 
     return false;
 }
 
-
+function printIsPalindrome(){
+    const palindrome_string = document.getElementById("Palindrome").value;
+    if (isPalindrome(palindrome_string)){
+        palindrome_result.textContent = "The String is Palindrome"; 
+    }else{
+        palindrome_result.textContent = "The String is Not Palindrome";
+    }
+}
