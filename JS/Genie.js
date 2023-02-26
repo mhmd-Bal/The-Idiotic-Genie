@@ -21,10 +21,11 @@ function printSortedNumbers(){
     let numbers_string_array = numbers.split(" ");
     console.log(numbers_string_array);
     let numbers_array = makeArrayNumbers(numbers_string_array);
-    // let sorted_array =  mergeSortArray(numbers_array);
-    // const sorted_numbers_text = document.getElementById("Sorted_numbers");
-    
-    // sorted_numbers_text.innerHTML = "Hello team";
+    let sorted_array =  mergeSortArray(numbers_array);
+    const sorted_numbers_text = document.getElementById("Sorted_numbers");
+    for( let i=0; i < sorted_array.length; i++){
+        sorted_numbers_text.textContent +=  sorted_array[i] + " ";
+    }
 }
 
 function mergeArray(left, right){
@@ -44,7 +45,7 @@ function mergeSortArray(temp_array){
         return temp_array;
     }
 
-    let mid = Math.floor(temp_array /2);
+    let mid = Math.floor(temp_array.length/2);
 
     let left = mergeSortArray(temp_array.slice(0,mid));
     let right = mergeSortArray(temp_array.slice(mid));
@@ -55,7 +56,7 @@ function mergeSortArray(temp_array){
 function makeArrayNumbers(string_array){
     let numbers_array = []; 
     for (let i=0; i < string_array.length; i++){
-        numbers_array.push(string_array[i]);
+        numbers_array.push(Number(string_array[i]));
     }
     console.log(numbers_array);
     return numbers_array;
