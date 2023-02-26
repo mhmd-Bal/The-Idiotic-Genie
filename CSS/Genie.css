@@ -84,9 +84,10 @@ body{
 }
 
 .Accordion_text{
-    display: none;
     overflow: hidden;
     padding: 0 2%;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
 }
 
 
