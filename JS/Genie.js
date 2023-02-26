@@ -1,6 +1,9 @@
 const accordions = document.getElementsByClassName("Accordion");
 const sorted_numbers_text = document.getElementById("Sorted_numbers");
 const prime_answer = document.getElementById("Prime_answer");
+const ip_address_text = document.getElementById("Ip_address");
+const even_ip = document.getElementById("Even_ip");
+let ip_addr;
 
 for(let i=0; i < accordions.length; i++) {
     accordions[i].addEventListener("click", function(){
@@ -83,4 +86,18 @@ function isAgePrime(){
         }
     }
 }
+
+function gettingIP(){
+    fetch("https://api.ipify.org").then(r => r.text()).then(ip => ip_addr = ip);
+}
+gettingIP();
+
+function printIP(){
+    ip_address_text.textContent += ip_addr;
+}
+
+// setTimeout(() => {
+//     console.log(ip_addr)
+// }, 3000);
+
 
