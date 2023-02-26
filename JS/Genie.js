@@ -6,6 +6,7 @@ const even_ip = document.getElementById("Even_ip");
 const palindrome_result = document.getElementById("Is_palindrome");
 let ip_addr;
 let counter = 0;
+let array_of_objects = [];
 
 for(let i=0; i < accordions.length; i++) {
     accordions[i].addEventListener("click", function(){
@@ -148,4 +149,35 @@ function printIsPalindrome(){
     }else{
         palindrome_result.textContent = "The String is Not Palindrome";
     }
+}
+
+function isNumber(value){
+    if(typeof value === "string") {
+        return !isNaN(value);
+    }
+}
+
+
+function reverseNumbers(str){
+    for(let i=0; i < str.length; i++){
+        var char = str[i];
+        if(isNumber(char)){
+            array_of_objects.push(char);
+        }
+    }
+    
+    
+    str = str.split("");
+    array_of_objects.reverse();
+    
+    for(let i=0; i < str.length; i++){
+        var char = str[i];
+        if(isNumber(char)){
+            str[i] = array_of_objects.shift();
+        }
+    }
+    
+    str = str.join("");
+    
+    return str;
 }
