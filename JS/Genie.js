@@ -94,10 +94,31 @@ gettingIP();
 
 function printIP(){
     ip_address_text.textContent += ip_addr;
+    addEvenIpNumbers();
 }
 
-// setTimeout(() => {
-//     console.log(ip_addr)
-// }, 3000);
+function addEvenIpNumbers(){
+    let ip_addr_str = ip_addr.split(".");
+    let ip_addr_numbers = makeArrayNumbers(ip_addr_str);
+    let ip_addr_even_numbers = getEvenNumbers(ip_addr_numbers);
+    let total_even = addNumbers(ip_addr_even_numbers);
+    even_ip.textContent += total_even;
+}
 
+function getEvenNumbers(numbers_list){
+    let even_numbers = [];
+    for (let i=0; i<numbers_list.length; i++){
+        if(numbers_list[i] % 2 == 0){
+            even_numbers.push(numbers_list[i]);
+        }
+    }
+    return even_numbers;
+}
 
+function addNumbers(numbers_list){
+    let total = 0;
+    for (let i=0; i<numbers_list; i++){
+        total += numbers_list[i];
+    }
+    return total;
+}
