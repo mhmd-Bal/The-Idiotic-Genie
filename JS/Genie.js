@@ -264,21 +264,30 @@ window.addEventListener("scroll", function(){
 form.addEventListener("submit", function(e){
 
     let messages = [];
-    let regex_test = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    let regex_test_password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    let regex_text_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    if (Name.value === '' || Name.value == null) {
-        messages.push('Name is required');
+    if (!email.value.match(regex_text_email)) {
+        messages.push("Enter a valid Email");
+    }
+
+    if(verify_email.value != email.value) {
+        messages.push("Make sure the Emails are identical");
+    }
+
+    if (password.value.match(regex_test_password)) {
+        messages.push("Password must be between 8 - 15 characters, contains atleast 1 special character, 1 number, 1 uppercase letter");
     }
     
-    if (password.value.match(regex_test)) {
-        messages.push('Password must be between 8 - 15 characters, contains atleast 1 special character, 1 number, 1 uppercase letter');
+    if (verify_password.value != password.value){
+        messages.push("Make sure the Passwords are identical");
     }
-    
-    if (password.value)
     
     if (messages.length > 0) {
         e.preventDefault();
-        errorElement.innerText = messages.join(', ');
+        error_element.innerText = messages.join(", ");
+    }else{
+
     }
 
 });
