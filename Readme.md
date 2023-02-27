@@ -8,7 +8,7 @@ To make a javascript heavy website
 -  CSS
 -  Javascript
 
-## Referances / Credits
+## References / Credits
 
 -  [W3schools accordion page](https://www.w3schools.com/howto/howto_js_accordion.asp): To learn how to make the accordion effect
 -  [W3schools Prompt page](https://www.w3schools.com/jsref/met_win_prompt.asp#gsc.tab=0): To learn about the Prompt()
