@@ -7,9 +7,17 @@ const palindrome_result = document.getElementById("Is_palindrome");
 const reverse_result = document.getElementById("Reversed");
 const consonant_result = document.getElementById("Consonant_string");
 const user_location = document.getElementById("Location");
+const name = document.getElementById("Name");
+const password = document.getElementById("Password");
+const email = document.getElementById("Email");
+const form = document.getElementById("Form");
+const error_element = document.getElementById("Error");
+const verify_password = document.getElementById("Verify_password");
+const verify_email = document.getElementById("Verify_email");
 let ip_addr;
 let counter = 0;
 let array_of_objects = [];
+
 
 
 for(let i=0; i < accordions.length; i++) {
@@ -253,3 +261,24 @@ window.addEventListener("scroll", function(){
     }
 });
 
+form.addEventListener("submit", function(e){
+
+    let messages = [];
+    let regex_test = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+    if (Name.value === '' || Name.value == null) {
+        messages.push('Name is required');
+    }
+    
+    if (password.value.match(regex_test)) {
+        messages.push('Password must be between 8 - 15 characters, contains atleast 1 special character, 1 number, 1 uppercase letter');
+    }
+    
+    if (password.value)
+    
+    if (messages.length > 0) {
+        e.preventDefault();
+        errorElement.innerText = messages.join(', ');
+    }
+
+});
